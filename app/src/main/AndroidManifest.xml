@@ -1,0 +1,79 @@
+```xml
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.madhub.tiktokcommenttool">
+
+    <!-- 
+        AndroidManifest.xml serves as the central configuration file for 
+        the Android application. This file includes essential details about 
+        app components, permissions, and configurations to ensure 
+        optimal functionality and compliance with Android standards. 
+    -->
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        
+        <!-- 
+            MainActivity serves as the entry point for the TikTok Comment Tool.
+            This component allows users to interact with the features of 
+            the app and manage comment automation efficiently. 
+        -->
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 
+            AutomationService is crucial for executing background operations
+            without user intervention. This service enables 24/7 automated
+            management of comment posting, ensuring seamless integration with 
+            TikTok while adhering to platform guidelines. 
+        -->
+        <service android:name=".AutomationService" />
+
+    </application>
+
+    <!-- 
+        The following permissions are declared to enable specific functionalities 
+        of the TikTok Comment Tool. Each permission is essential for the 
+        comprehensive capability of the app.
+    -->
+
+    <!-- 
+        INTERNET permission allows the app to access network resources, 
+        enabling it to post comments and interact with TikTok's API effectively.
+        This powerful permission enables real-time engagement on the platform. 
+    -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- 
+        ACCESS_NETWORK_STATE permission enables the app to check the device's 
+        network connectivity status. This ensures that comment operations 
+        are only attempted when a stable network connection is available, 
+        thus enhancing user experience. 
+    -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- 
+        WRITE_EXTERNAL_STORAGE permission allows the app to save 
+        configurations or logs locally. This flexible configuration option ensures 
+        that users can manage their settings without any data loss. 
+    -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- 
+        READ_EXTERNAL_STORAGE permission enables the app to read local files 
+        which might be necessary for loading configuration data or user settings. 
+        This comprehensive capability supports user customization and enhances 
+        the overall functionality of the app. 
+    -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+</manifest>
+```
